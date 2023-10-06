@@ -1,8 +1,10 @@
-import { styled } from '@mui/material';
+'use client'
+
+
 import * as React from 'react';
 
 export default function Course() {
-
+    const [hiddenChoose, setHiddenChoose] = React.useState(true) 
 
     return (
         <div className='bg-gray-800 w-screen flex flex-col items-center text-white'>
@@ -75,12 +77,76 @@ export default function Course() {
                 </div>
                 <div className='mt-3 mb-5 text-red w-full relative h-5'>
                     <div className='w-full h-4 absolute z-10'></div>
-                    <input type="range" min="0" max="45" value="5" className="absolute z-0 w-full h-[2px] bg-slate-600  overflow-hidden opacity-80 top-2"/>
+                    <input type="range" min="0" max="45" defaultValue="5" className="absolute z-0 w-full h-[2px] bg-slate-600  overflow-hidden opacity-80 top-2"/>
                     
                 </div>
+                <div className='flex justify-between mb-8'>
+                    <div className='flex'>
+                        <div className='w-11 h-11 overflow-hidden rounded-full mr-2 cursor-pointer'>
+                            <img className='w-11 h-11 object-cover rounded-full' src="https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/88044728_728653661299490_3907106769641406464_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=vZJ0jYz1H98AX8Yyd0l&_nc_ht=scontent.fhan3-1.fna&oh=00_AfALlWB4onOqgU9MYqbpw4veYIXUAuV-dq6Ag3-EVeBE4w&oe=653D0DA5" alt="" />
+                        </div>
+                        <div>
+                            <div className='text-xs'>Created by</div>
+                            <div className='hover:text-blue-400 cursor-pointer'>hoanjen</div>
+                        </div>
+                    </div>
+                    <div className='flex items-center'>
+                        <div className='flex border-solid rounded-md border-slate-600 border-2 p-2 hover:bg-slate-500 cursor-pointer'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-person-add mr-1" viewBox="0 0 16 16">
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                                <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
+                            </svg>
+                            Add Friend
+                        </div>
+                        <div className='flex border-solid rounded-md border-slate-600 border-2 p-2 hover:bg-slate-500 cursor-pointer ml-4'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-share mr-1" viewBox="0 0 16 16">
+                                <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                            </svg>
+                            Share
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div className='flex justify-between items-center'>
+                        <div className='text-lg p-2'>Terms in this set (45)</div>
+                        <div onClick={function(){setHiddenChoose(!hiddenChoose)}} className='flex border-solid rounded-md border-slate-600 border-2 p-2 hover:bg-slate-500 cursor-pointer relative'>
+                            <div className='mr-2'>Original</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <ChooseSort hiddenChoose={hiddenChoose}/>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
             </div>
         </div>
     )
 
+}
+
+function ChooseSort({hiddenChoose} :{hiddenChoose:boolean}){
+    if (hiddenChoose){
+        return ( 
+            <div className='z-10 absolute top-10 w-32 rounded-md'>
+                <div className='bg-slate-700 p-2'>Original</div>
+                <div className='bg-slate-700 p-2'>Alphabetical</div>
+            </div>
+        )
+    }
 }
 

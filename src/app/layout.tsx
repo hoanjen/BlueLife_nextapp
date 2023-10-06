@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className='flex flex-col'>
+          <div className='fixed w-screen z-20'>
            <SideBar></SideBar>
+          </div>
           <div>
             {children}
           </div>

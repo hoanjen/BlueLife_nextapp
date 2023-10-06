@@ -7,7 +7,6 @@ import Date from './components/Home/Date'
 
 export default function Home() {
 
-  const [list, setList] = React.useState(0)
 
   return (
       <div className='bg-gray-800 w-screen flex flex-col items-center'>
